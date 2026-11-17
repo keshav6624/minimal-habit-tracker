@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens (UI_UX.md): calm neutral surfaces, ONE primary accent
+ * (indigo-600), restrained success green, 8px radius controls / 12px cards /
+ * 16px dialogs, system font stack.
+ */
+:root {
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --color-accent: oklch(0.51 0.19 273); /* indigo-600 */
+  --color-accent-strong: oklch(0.46 0.2 273); /* indigo-700 */
+  --color-success: oklch(0.53 0.15 155); /* emerald-600 */
+  --radius-control: 8px;
+  --radius-card: 12px;
+  --radius-dialog: 16px;
+}
+
+html {
+  font-family: var(--font-sans);
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-slate-50, #f8fafc);
+  color: var(--color-slate-800, #1e293b);
+  font-size: 15.5px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Visible focus ring for keyboard users on every interactive element. */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Respect reduced-motion: disable transitions and pulse animations. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

@@ -1,0 +1,15 @@
+# Local development: zero-setup in-memory H2 in PostgreSQL compatibility mode
+# so the Flyway migrations (written for PostgreSQL) run unmodified.
+spring:
+  datasource:
+    url: jdbc:h2:mem:devdb;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+  h2:
+    console:
+      enabled: false
+
+logging:
+  level:
+    com.example.habits: DEBUG
