@@ -1,3 +1,7 @@
+# --- Docs: keep spec/planning files out of the repo (README.md stays tracked) ---
+*.md
+!README.md
+
 # --- Backend ---
 backend/target/
 backend/.mvn/wrapper/maven-wrapper.jar
